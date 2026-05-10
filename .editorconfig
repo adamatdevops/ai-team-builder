@@ -1,227 +1,146 @@
-# =============================================================================
-# AI-Team-Builder .gitignore
-# =============================================================================
+# EditorConfig - https://editorconfig.org
+# Helps maintain consistent coding styles across different editors and IDEs
+
+root = true
 
 # =============================================================================
-# BIBLE DOCS (Internal guidelines - not for public review)
+# Default settings for all files
 # =============================================================================
-/planning/
-/roadmap/
-/decisions/
-/adr/
-/research/
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+indent_style = space
+indent_size = 2
 
 # =============================================================================
-# Internal Prompts & Context (prevent prompt leakage)
+# Python files
 # =============================================================================
-CONTEXT.md
-PROMPT.md
-**/CONTEXT.md
-**/PROMPT.md
+[*.py]
+indent_size = 4
+max_line_length = 100
 
 # =============================================================================
-# Python
+# JavaScript / TypeScript files
 # =============================================================================
-__pycache__/
-*.py[cod]
-*$py.class
-*.so
-.Python
-build/
-develop-eggs/
-dist/
-downloads/
-eggs/
-.eggs/
-/lib/
-/lib64/
-# But keep frontend lib
-!src/frontend/src/lib/
-parts/
-sdist/
-var/
-wheels/
-*.egg-info/
-.installed.cfg
-*.egg
-MANIFEST
-
-# Virtual environments
-venv/
-.venv/
-ENV/
-env/
-.env.local
+[*.{js,jsx,ts,tsx}]
+indent_size = 2
+max_line_length = 100
 
 # =============================================================================
-# Node.js / Frontend
+# JSON files
 # =============================================================================
-node_modules/
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-.pnpm-debug.log*
-.next/
-out/
-.nuxt/
-dist/
+[*.json]
+indent_size = 2
+
+# JSONC (JSON with comments)
+[*.jsonc]
+indent_size = 2
 
 # =============================================================================
-# TurboRepo
+# YAML files
 # =============================================================================
-.turbo/
+[*.{yml,yaml}]
+indent_size = 2
 
 # =============================================================================
-# IDE / Editor
+# TOML files
 # =============================================================================
-.idea/
-.vscode/
-*.swp
-*.swo
-*~
-.project
-.classpath
-.settings/
-*.sublime-workspace
-*.sublime-project
-*.iml
+[*.toml]
+indent_size = 2
 
 # =============================================================================
-# AI / Codex / History (Internal AI context - not for repo)
+# Markdown files
 # =============================================================================
-.codex/
-codex/
-.history/
-history/
-**/.codex/
-**/codex/
-**/.history/
+[*.md]
+trim_trailing_whitespace = false
+max_line_length = off
 
 # =============================================================================
-# Environment & Secrets
+# Shell scripts
 # =============================================================================
-.env
-.env.local
-.env.*.local
-*.pem
-*.key
-secrets/
-!infra/k8s/base/secrets/README.md
-!infra/k8s/base/secrets/create-secrets.sh
-credentials/
+[*.sh]
+indent_size = 2
 
 # =============================================================================
-# Docker
+# Dockerfile
 # =============================================================================
-docker-compose.override.yml
+[Dockerfile]
+indent_size = 4
+
+[Dockerfile.*]
+indent_size = 4
 
 # =============================================================================
-# Database
+# Makefile (requires tabs)
 # =============================================================================
-*.db
-*.sqlite
-*.sqlite3
+[Makefile]
+indent_style = tab
+indent_size = 4
+
+[*.mk]
+indent_style = tab
+indent_size = 4
 
 # =============================================================================
-# Testing & Coverage
+# Go files
 # =============================================================================
-.coverage
-htmlcov/
-.tox/
-.nox/
-coverage.xml
-*.cover
-*.py,cover
-.hypothesis/
-.pytest_cache/
-pytest_cache/
+[*.go]
+indent_style = tab
+indent_size = 4
 
 # =============================================================================
-# ML / Models
+# HTML / CSS files
 # =============================================================================
-*.pkl
-*.pickle
-*.h5
-*.hdf5
-*.pt
-*.pth
-*.onnx
-/models/
-!/models/.gitkeep
+[*.{html,htm,css,scss,sass,less}]
+indent_size = 2
 
 # =============================================================================
-# Logs
+# SQL files
 # =============================================================================
-logs/
-*.log
+[*.sql]
+indent_size = 2
 
 # =============================================================================
-# OSfw-workers
+# Terraform files
 # =============================================================================
-.DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
-Thumbs.db
+[*.{tf,tfvars}]
+indent_size = 2
 
 # =============================================================================
-# Misc
+# Kubernetes / Helm files
 # =============================================================================
-*.bak
-*.tmp
-*.temp
-.cache/
-tmp/
-temp/
-.mcp.json
-*.tfstate
-*.tfvars
-kubeconfig
+[*.{yaml,yml}]
+indent_size = 2
+
+[{Chart.yaml,values.yaml,values-*.yaml}]
+indent_size = 2
 
 # =============================================================================
-# Generated artifacts
+# Git files
 # =============================================================================
-review/
-**/target/
+[.gitattributes]
+indent_style = tab
 
-
-# Java
-*.class
-*.jar
-*.war
-*.ear
-hs_err_pid*
-
-# Maven
-.m2/
-**/target/
-**/dependency-reduced-pom.xml
-pom.xml.tag
-pom.xml.releaseBackup
-pom.xml.versionsBackup
-release.properties
+[.gitmodules]
+indent_style = tab
 
 # =============================================================================
-# Outputs & MLflow local
+# Configuration files (INI style)
 # =============================================================================
-outputs/
-mlruns/
-mlartifacts/
+[*.{ini,cfg,conf}]
+indent_size = 4
 
 # =============================================================================
-# Claude Code — ignore local state, keep shared skills
+# Environment files
 # =============================================================================
-.claude/
-**/.claude/
+[*.env*]
+indent_size = 2
 
 # =============================================================================
-# Claude Code — ignore local state, keep shared skills
+# Lock files (don't modify)
 # =============================================================================
-.cursor/
-**/.cursor/
-
-# CUE
-cue.mod/
-*.cue.json
+[{pnpm-lock.yaml,package-lock.json,yarn.lock}]
+indent_size = 2
+insert_final_newline = false
