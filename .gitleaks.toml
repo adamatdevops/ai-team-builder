@@ -1,7 +1,7 @@
 # Gitleaks configuration
 # https://github.com/gitleaks/gitleaks
 
-title = "ForgeWorks Gitleaks Configuration"
+title = "AI-Team-Builder Gitleaks Configuration"
 
 # Use the default gitleaks rules as a base
 [extend]
@@ -72,11 +72,11 @@ stopwords = [
 
 # Custom rules for project-specific patterns
 [[rules]]
-id = "forge-internal-token"
-description = "ForgeWorks Internal Token"
-regex = '''(?i)forge[-_]?works[-_]?token\s*[:=]\s*['"]?([a-zA-Z0-9_-]{32,})['"]?'''
+id = "ai-team-builder-internal-token"
+description = "AI-Team-Builder Internal Token"
+regex = '''(?i)ai[-_]?team[-_]?builder[-_]?token\s*[:=]\s*['"]?([a-zA-Z0-9_-]{32,})['"]?'''
 tags = ["token", "internal"]
-keywords = ["forgeworks", "forge_works", "forge-works"]
+keywords = ["ai-team-builder", "ai_team_builder", "ai-team-builder"]
 
 [[rules]]
 id = "generic-high-entropy"
